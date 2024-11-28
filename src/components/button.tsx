@@ -1,8 +1,9 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 interface ButtonProps {
-    size?: 'small' | 'medium' | 'large';
+    fontSize?: string;
+    padding?: string;
     color?: string;
     alignSelf?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
     textAlign?: 'left' | 'center' | 'right';
@@ -17,8 +18,9 @@ interface ButtonProps {
 }
 
 const defaultProps: Partial<ButtonProps> = {
+    fontSize: '2vh',
     textColor: 'white',
-    size: 'medium',
+    padding: '1vh',
     color: 'white',
     alignSelf: 'center',
     textAlign: 'center',
@@ -31,6 +33,8 @@ const defaultProps: Partial<ButtonProps> = {
 }
 
 const StyledButton = styled.button<ButtonProps>`
+    font-size: ${props => props.fontSize};
+    padding: ${props => props.padding};
     color: ${props => props.textColor};
     background-color: ${props => props.color};
     align-self: ${props => props.alignSelf};
@@ -42,23 +46,6 @@ const StyledButton = styled.button<ButtonProps>`
     border: ${props => props.border};
     user-select: none;
     cursor: pointer;
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 400;
-
-    ${props => props.size === 'small' && css`
-        font-size: 2vw;
-        padding: 0.5vw 1vw;
-    `}
-
-    ${props => props.size === 'medium' && css`
-        font-size: 3vw;
-        padding: 1vw 2vw;
-    `}
-
-    ${props => props.size === 'large' && css`
-        font-size: 2vh;
-        padding: 1vh 8vh;
-    `}
 `;
 
 export const Button = ({children, ...props}: ButtonProps) => {
@@ -66,3 +53,5 @@ export const Button = ({children, ...props}: ButtonProps) => {
         {children}
     </StyledButton>
 }
+
+export default Button;

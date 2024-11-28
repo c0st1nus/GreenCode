@@ -42,9 +42,9 @@ export const WelcomePage = () => {
             <StyledIcon src='/circle.svg' alt='Logo' style={{marginTop: 'auto'}}/>
             <Button 
                 borderRadius='1.8vh' 
-                size='large' 
                 color='transparent' 
                 border='0.5vh solid white' 
+                padding='1vh 8vh'
                 marginTop='auto' 
                 marginBottom='3vh'
                 onClick={() => navigate("/login")}
