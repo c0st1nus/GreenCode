@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+// import { useState } from 'react';
 import Styled from 'styled-components';
-import { invoke } from '@tauri-apps/api/core';
+// import { invoke } from '@tauri-apps/api/core';
 import Paragraph from '../components/paragraph';
 import Button from '../components/button';
-import InputBox from '../components/input_field';
+// import InputBox from '../components/input_field';
 import Image from '../components/image';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const StyledLogin = Styled.div`
     display: flex;
@@ -23,8 +23,8 @@ const ButtonSet = Styled.div`
 `;
 
 export const Login = () => {
-    const navigate = useNavigate();
-    const [username, setUsername] = useState('');
+    // const navigate = useNavigate();
+    // const [username, setUsername] = useState('');
     return (
         <StyledLogin>
             <Paragraph
